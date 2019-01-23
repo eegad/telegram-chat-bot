@@ -1,0 +1,8 @@
+{
+    "token": "Bot token from bot father",
+    "owner": {
+        "id": "useid",
+        "username": "username"
+    },
+    "dburl": "your db url. make if you dont have"
+}
