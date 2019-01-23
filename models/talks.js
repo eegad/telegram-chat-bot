@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const sequelize = require('../utils/database');
 
 //create notes model
-var notes = sequelize.define('talks', {
+var talks = sequelize.define('talks', {
   ques: {
     type: Sequelize.STRING,
     allowNull: false

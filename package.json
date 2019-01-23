@@ -1,0 +1,30 @@
+{
+  "name": "telegram-chat-bot",
+  "version": "1.0.0",
+  "description": "A simple bot which will reply to random messages",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eegad/telegram-chat-bot.git"
+  },
+  "keywords": [
+    "telegram",
+    "chat",
+    "bot"
+  ],
+  "author": "eegad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eegad/telegram-chat-bot/issues"
+  },
+  "homepage": "https://github.com/eegad/telegram-chat-bot#readme",
+  "dependencies": {
+    "pg": "^7.8.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.42.0",
+    "telegraf": "^3.26.0"
+  }
+}

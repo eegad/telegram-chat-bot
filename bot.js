@@ -15,9 +15,23 @@ bot.startPolling();
 //core
 bot.start((ctx) => ctx.reply(`Hello ${ctx.from.first_name}!, I don't take any commands so don't bother.`));
 bot.on('text', (ctx) => {
-  talks.findOne({ where: {title: ctx.message.text} }).then(data => {
-    console.log(data);
-  }
+  talks.findOne({ where: {ques: ctx.message.text} }).then(data => {
+    if(data == null){
+      //only if a reply
+      if(ctx.message.reply_to_message == undefined){
+        return;
+      }
+      //create new talk
+      talks.create({
+        ques: ctx.message.reply_to_message.text,
+        reply: ctx.message.text
+      }).then(err => {
+        console.log(err);
+      });
+    } else {
+      ctx.telegram.sendMessage(ctx.message.chat.id, data.reply, {'reply_to_message_id': ctx.message.message_id})
+    }
+  });
 });
 
 //to test database connection
