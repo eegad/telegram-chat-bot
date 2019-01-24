@@ -1,4 +1,4 @@
-[![Known Vulnerabilities](https://snyk.io/test/github/eegad/telegram-chat-bot/badge.svg?targetFile=package.json)](https://snyk.io/test/github/eegad/telegram-chat-bot?targetFile=package.json)
+[![Known Vulnerabilities](https://snyk.io/test/github/eegad/telegram-chat-bot/badge.svg?targetFile=package.json)](https://snyk.io/test/github/eegad/telegram-chat-bot?targetFile=package.json)[![Build Status](https://travis-ci.org/eegad/telegram-chat-bot.png?branch=master)](https://travis-ci.org/eegad/telegram-chat-bot)
 # Telegram chat bot
 
 This bot is for random messaging in groups (or in private). Setting up this bot is extremely simple.
