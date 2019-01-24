@@ -1,5 +1,7 @@
 module.exports = function(ctx) {
+  var sequelize = require("../utils/database.js");
   var talks = require("../models/talks");
+  sequelize.sync();
   talks.findOne({ where: {ques: ctx.message.text} }).then(data => {
     if(data == null){
       //only if a reply
@@ -12,7 +14,7 @@ module.exports = function(ctx) {
         reply: ctx.message.text
       });
     } else {
-      ctx.telegram.sendMessage(ctx.message.chat.id, data.reply, {'reply_to_message_id': ctx.message.message_id})
+      ctx.telegram.sendMessage(ctx.message.chat.id, data.reply, {"reply_to_message_id": ctx.message.message_id})
     }
   });
 }

@@ -11,7 +11,7 @@ bot.startPolling();
 
 //core
 bot.start((ctx) => ctx.reply(`Hello ${ctx.from.first_name}! I don't take any commands so don't bother.`));
-bot.on('message', (ctx) => {
+bot.on("message", (ctx) => {
   if(ctx.message.text != undefined){
     text_module(ctx);
   }
