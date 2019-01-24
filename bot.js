@@ -5,7 +5,7 @@ const config = require("./config");
 const Telegraf = require("telegraf");
 const bot = new Telegraf(config.token);
 const sequelize = require("./utils/database");
-const text_module = require("./modules/text")
+const text_module = require("./modules/text");
 
 bot.startPolling();
 
