@@ -2,8 +2,8 @@ module.exports = function(ctx) {
   var sequelize = require("../utils/database.js");
   var talks = require("../models/talks");
   sequelize.sync();
-  talks.findOne({ where: {ques: ctx.message.text} }).then(data => {
-    if(data == null){
+  talks.findAll({ where: {ques: ctx.message.text} }).then(data => {
+    if(data[0] == undefined){
       //only if a reply
       if(ctx.message.reply_to_message == undefined){
         return;
@@ -14,7 +14,8 @@ module.exports = function(ctx) {
         reply: ctx.message.text
       });
     } else {
-      ctx.telegram.sendMessage(ctx.message.chat.id, data.reply, {"reply_to_message_id": ctx.message.message_id})
+      let random = Math.floor(Math.random() * data.length);
+      ctx.telegram.sendMessage(ctx.message.chat.id, data[random].reply, {"reply_to_message_id": ctx.message.message_id});
     }
   });
 }

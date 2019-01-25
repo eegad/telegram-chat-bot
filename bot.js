@@ -6,7 +6,7 @@ const Telegraf = require("telegraf");
 const bot = new Telegraf(config.token);
 const sequelize = require("./utils/database");
 const text_module = require("./modules/text");
-
+const sticker_module = require("./modules/sticker");
 bot.startPolling();
 
 //core
@@ -14,6 +14,8 @@ bot.start((ctx) => ctx.reply(`Hello ${ctx.from.first_name}! I don't take any com
 bot.on("message", (ctx) => {
   if(ctx.message.text != undefined){
     text_module(ctx);
+  }else if (ctx.message.sticker != undefined) {
+    sticker_module(ctx);
   }
 });
 
